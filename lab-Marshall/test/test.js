@@ -18,7 +18,7 @@ describe('chat server', function() {
   it('should send some data between clients', function(done) {
     let client1 = net.connect({port});
     let client2 = net.connect({port});
-    var messages = ['test message', 'hello from the server\n'];
+    var messages = ['test message', 'Welcome to the chat server! \n'];
     var toSend = ['test message'];
 
     client2.on('data', function(data) {

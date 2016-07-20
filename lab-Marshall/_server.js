@@ -7,7 +7,7 @@ let clients = [];
 let server = module.exports = exports = net.createServer(function(socket) {
   clients.push(socket);
 
-  socket.write('Welcome to our chat server! \n');
+  socket.write('Welcome to the chat server! \n');
   socket.name = 'User-' + socket.remotePort;
   socket.pipe(process.stdout);
   console.log(socket.name + ' has connected! \n');
