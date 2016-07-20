@@ -4,7 +4,7 @@ const net = require('net');
 const expect = require('chai').expect;
 
 const server = require('../_server');
-const port = 3000;
+const port = 5000;
 
 describe('chat server', function() {
   before(function(done) {

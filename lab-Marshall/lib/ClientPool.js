@@ -1,6 +1,6 @@
 const Events = ('events');
 
-function ClientPool(){
+var ClientPool = module.exports = exports = function(){
   this.pool = {};
   this.ee = new Events;
-}
+};

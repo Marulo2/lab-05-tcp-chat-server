@@ -1,3 +1,3 @@
 require('./_server.js').listen(3000, () => {
-  console.log('server up');
+  console.log('Server up on 3000!');
 });
