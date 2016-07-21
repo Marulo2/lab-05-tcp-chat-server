@@ -22,16 +22,20 @@ describe('chat server', function() {
     var toSend = ['test message'];
 
     client2.on('data', function(data) {
-      expect(data.toString()).to.eql(messages.pop());
-      if (toSend.length)
+      debugger;
+      expect(data.toString()).to.include(messages.pop());
+      if (toSend.length){
         client1.write(toSend.pop());
-      else
+        debugger;
+      } else {
         client1.end();
+      }
     });
 
     client1.on('close', function() {
       client2.end();
       expect(messages.length).to.eql(0);
+      debugger;
       done();
     });
   });

@@ -4,7 +4,7 @@ const net = require('net');
 
 let clients = [];
 
-let server = module.exports = exports = net.createServer(function(socket) {
+module.exports = exports = net.createServer(function(socket) {
   clients.push(socket);
 
   socket.write('Welcome to the chat server! \n');
@@ -30,7 +30,7 @@ let server = module.exports = exports = net.createServer(function(socket) {
   socket.on('end', function() {
     clients.forEach(function(client){
       if (client!== socket)
-        client.write(socket.name + ' has disconnected. \n');
+        console.log(socket.name + ' has disconnected. \n');
     });
 
     console.log(socket.name + 'has disconnected.');
