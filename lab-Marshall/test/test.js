@@ -22,11 +22,9 @@ describe('chat server', function() {
     var toSend = ['test message'];
 
     client2.on('data', function(data) {
-      debugger;
       expect(data.toString()).to.include(messages.pop());
       if (toSend.length){
         client1.write(toSend.pop());
-        debugger;
       } else {
         client1.end();
       }
@@ -35,7 +33,6 @@ describe('chat server', function() {
     client1.on('close', function() {
       client2.end();
       expect(messages.length).to.eql(0);
-      debugger;
       done();
     });
   });
